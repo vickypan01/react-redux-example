@@ -26,7 +26,7 @@ const TextInput: React.FC<TextInputProps> = ({
   className = "",
 }) => {
   return (
-    <div className={`text-input ${className}`}>
+    <span>
       {label && <label htmlFor={name}>{label}</label>}
       <input
         id={name}
@@ -37,10 +37,10 @@ const TextInput: React.FC<TextInputProps> = ({
         type={type}
         required={required}
         disabled={disabled}
-        className={`input-field ${error ? "input-error" : ""}`}
+        className={className + " input-field " + (error ? "input-error" : "")}
       />
-      {error && <p className="error-text">{error}</p>}
-    </div>
+      {error && <p className="d-block error-text text-danger">{error}</p>}
+    </span>
   );
 };
 

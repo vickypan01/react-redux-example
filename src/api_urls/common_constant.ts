@@ -1,3 +1,9 @@
+export const USER_PRIVILADGE = {
+  haveAccess: "HAVE_FULL_ACCESS",
+  notAllowed: "NOT_ACCESS_ALLOWED",
+  onlyView: "ONLY_VIEW_ACCESS",
+};
+
 export const TIMEOUT = 5000;
 
 export const ERROR_MESSAGES = {
@@ -11,4 +17,5 @@ export const API_BASE_URL = {
   BASE_URL_THREE: "https://api.freeapi.app/api/v1/public/randomusers",
   BASE_URL_FOUR:
     "https://api.freeapi.app/api/v1/kitchen-sink/http-methods/post",
+  BASE_URL_GRAPHQL_FIVE: "https://graphqlzero.almansi.me/api",
 };

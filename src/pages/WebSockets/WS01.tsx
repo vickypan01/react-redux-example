@@ -33,7 +33,7 @@ const WebSocketExample: React.FC = () => {
 
   return (
     <div>
-      <h3>WebSocket Example</h3>
+       <h2 className="display-6">WebSocket Example</h2>
       <button onClick={sendMessage}>Send Message</button>
       <ul>
         {messages.map((msg, i) => (

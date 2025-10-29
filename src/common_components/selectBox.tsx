@@ -31,7 +31,7 @@ const SelectBox: React.FC<SelectBoxProps> = ({
   className = "",
 }) => {
   return (
-    <div className={`select-box ${className}`}>
+    <span>
       {label && <label htmlFor={name}>{label}</label>}
       <select
         id={name}
@@ -40,7 +40,7 @@ const SelectBox: React.FC<SelectBoxProps> = ({
         onChange={onChange}
         disabled={disabled}
         required={required}
-        className={`select-field ${error ? "select-error" : ""}`}
+        className={className + ` select-field ${error ? "select-error" : ""}`}
       >
         <option value="" disabled>
           {placeholder}
@@ -51,8 +51,8 @@ const SelectBox: React.FC<SelectBoxProps> = ({
           </option>
         ))}
       </select>
-      {error && <p className="error-text">{error}</p>}
-    </div>
+      {error && <p className="d-block error-text text-danger">{error}</p>}
+    </span>
   );
 };
 

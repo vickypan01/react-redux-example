@@ -1,5 +1,4 @@
-import React from "react";
-import { RootState } from "../Redux/store";
+import type { RootState } from "../../src/Redux/store";
 import { useDispatch, useSelector } from "react-redux";
 import { decrement, increment } from "../Features/Counter/counterSlice";
 

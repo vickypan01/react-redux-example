@@ -1,15 +1,11 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import "../index.css";
 
 const AppHeader: React.FC = () => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid px-0">
       <header>
-        <nav
-          className="navbar navbar-expand-lg"
-          style={{ background: "rgba(235, 90, 90, 1)" }}
-          data-bs-theme="light"
-        >
+        <nav className="navbar navbar-expand-lg bd-navbar">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               VP
@@ -73,9 +69,19 @@ const AppHeader: React.FC = () => {
                       </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
-                        Something else here
-                      </a>
+                      <Link className="dropdown-item" to="google-map">
+                        Google Map 01
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="lazyLoading">
+                        Lazy Loading Example
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="GraphqlAPI">
+                        Graph QL API Example
+                      </Link>
                     </li>
                   </ul>
                 </li>

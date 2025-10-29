@@ -5,6 +5,7 @@ import {
   randomUsers,
   kitchenSink,
 } from "../Features/Services/freerandom_usersapi";
+import { graphAPI } from "../Features/Services/graphql_query";
 
 export const store = configureStore({
   reducer: {
@@ -13,13 +14,15 @@ export const store = configureStore({
     [imageAPI.reducerPath]: imageAPI.reducer,
     [randomUsers.reducerPath]: randomUsers.reducer,
     [kitchenSink.reducerPath]: kitchenSink.reducer,
+    [graphAPI.reducerPath]: graphAPI.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
       .concat(userAPI.middleware)
       .concat(imageAPI.middleware)
       .concat(randomUsers.middleware)
-      .concat(kitchenSink.middleware),
+      .concat(kitchenSink.middleware)
+      .concat(graphAPI.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
