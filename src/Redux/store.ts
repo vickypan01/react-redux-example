@@ -4,6 +4,7 @@ import { imageAPI, userAPI } from "../Features/Services/pho_usersapi";
 import {
   randomUsers,
   kitchenSink,
+  getYouTubeVideos,
 } from "../Features/Services/freerandom_usersapi";
 import { graphAPI } from "../Features/Services/graphql_query";
 
@@ -15,6 +16,7 @@ export const store = configureStore({
     [randomUsers.reducerPath]: randomUsers.reducer,
     [kitchenSink.reducerPath]: kitchenSink.reducer,
     [graphAPI.reducerPath]: graphAPI.reducer,
+    [getYouTubeVideos.reducerPath]: getYouTubeVideos.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
@@ -22,7 +24,8 @@ export const store = configureStore({
       .concat(imageAPI.middleware)
       .concat(randomUsers.middleware)
       .concat(kitchenSink.middleware)
-      .concat(graphAPI.middleware),
+      .concat(graphAPI.middleware)
+      .concat(getYouTubeVideos.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

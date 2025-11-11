@@ -2,7 +2,7 @@ export const USER_PRIVILADGE = {
   haveAccess: "HAVE_FULL_ACCESS",
   notAllowed: "NOT_ACCESS_ALLOWED",
   onlyView: "ONLY_VIEW_ACCESS",
-};
+} as const;
 
 export const TIMEOUT = 5000;
 
@@ -18,4 +18,6 @@ export const API_BASE_URL = {
   BASE_URL_FOUR:
     "https://api.freeapi.app/api/v1/kitchen-sink/http-methods/post",
   BASE_URL_GRAPHQL_FIVE: "https://graphqlzero.almansi.me/api",
+  BASE_URL_SIX: "https://api.freeapi.app/api/v1/public/stocks/stock/random",
+  BASE_URL_SEVEN: "https://api.freeapi.app/api/v1/public",
 };

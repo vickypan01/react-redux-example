@@ -67,3 +67,32 @@ export interface RandomUser {
   };
   nat: string;
 }
+
+// ********************************************************************
+
+export interface YouTubeVideoItem {
+  kind: string;
+  items: {
+    id: string;
+    snippet: {
+      title: string;
+      description: string;
+      thumbnails: {
+        high: any;
+        medium: { url: string };
+      };
+    };
+  };
+}
+
+export interface YouTubeApiResponse {
+  statusCode: number;
+  data: {
+    page: number;
+    limit: number;
+    totalItems: number;
+    data: YouTubeVideoItem[];
+  };
+  message: string;
+  success: boolean;
+}

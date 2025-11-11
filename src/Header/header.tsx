@@ -83,6 +83,11 @@ const AppHeader: React.FC = () => {
                         Graph QL API Example
                       </Link>
                     </li>
+                    <li>
+                      <Link className="dropdown-item" to="subchild">
+                        Sub Child Component
+                      </Link>
+                    </li>
                   </ul>
                 </li>
               </ul>

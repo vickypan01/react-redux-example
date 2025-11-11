@@ -1,6 +1,10 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { API_BASE_URL } from "../../api_urls/common_constant";
-import type { RandomUserResponse } from "../../api_urls/interfaceTypes";
+import type {
+  RandomUserResponse,
+  YouTubeApiResponse,
+  YouTubeVideoItem,
+} from "../../api_urls/interfaceTypes";
 
 export const randomUsers = createApi({
   reducerPath: "random_users",
@@ -18,11 +22,33 @@ export const randomUsers = createApi({
   }),
 });
 
+export const getYouTubeVideos = createApi({
+  reducerPath: "Youtubevideos",
+  baseQuery: fetchBaseQuery({
+    baseUrl: API_BASE_URL.BASE_URL_SEVEN,
+  }),
+  endpoints: (builder) => ({
+    getYouTubeVideosDetails: builder.query<YouTubeVideoItem[], void>({
+      query: () => ({
+        url: "youtube/videos",
+        params: {
+          page: 1,
+          limit: 500,
+          query: "javascript",
+          sortBy: "mostLiked",
+        },
+      }),
+      transformResponse: (response: YouTubeApiResponse) =>
+        response.data?.data ?? [],
+    }),
+  }),
+});
+
 export const kitchenSink = createApi({
   reducerPath: "kitchenSink",
   baseQuery: fetchBaseQuery({ baseUrl: API_BASE_URL.BASE_URL_FOUR }),
   endpoints: (builder) => ({
-    getKitchenData: builder.mutation<any, any>({
+    getKitchenData: builder.mutation<any, void>({
       query: (body) => ({
         url: "",
         method: "POST",
@@ -34,3 +60,4 @@ export const kitchenSink = createApi({
 
 export const { useGetRandomUserDetailsQuery } = randomUsers;
 export const { useGetKitchenDataMutation } = kitchenSink;
+export const { useGetYouTubeVideosDetailsQuery } = getYouTubeVideos;
