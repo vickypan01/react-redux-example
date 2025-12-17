@@ -18,6 +18,8 @@ import LazyloadingExample from "../pages/LazyLoadingExmp/lazyloading";
 import GraphQLAPI from "../Redux/GAPI/GraphQLAPI";
 import Unauthorized from "../Unauthorized";
 import ChildComponent from "../pages/ParentComp/ChildComp/childComponent";
+import JWTToeknExample from "../pages/JWT_Tokens/JWTToeknExample";
+import LoginCredentials from "../pages/JWT_Tokens/loginCredentials";
 
 const userPrivilegee = USER_PRIVILADGE.onlyView;
 
@@ -53,6 +55,8 @@ const AppRoutes = createBrowserRouter(
       <Route path="lazyLoading" element={<LazyloadingExample />} />
       <Route path="GraphqlAPI" element={<GraphQLAPI />} />
       <Route path="subchild" element={<ChildComponent />} />
+      <Route path="jwt-token" element={<JWTToeknExample />} />
+      <Route path="/loginCredentials" element={<LoginCredentials />} />
     </Route>
   )
 );

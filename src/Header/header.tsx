@@ -88,6 +88,11 @@ const AppHeader: React.FC = () => {
                         Sub Child Component
                       </Link>
                     </li>
+                    <li>
+                      <Link className="dropdown-item" to="jwt-token">
+                        JWT Token Example
+                      </Link>
+                    </li>
                   </ul>
                 </li>
               </ul>
