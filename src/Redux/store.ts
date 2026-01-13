@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterSlice from "../Features/Counter/counterSlice";
+import { counterReducer, timerReducer } from "../Features/Counter/counterSlice";
 import { imageAPI, userAPI } from "../Features/Services/pho_usersapi";
 import {
   randomUsers,
@@ -11,7 +11,8 @@ import { userAuthAPI } from "../Features/Services/userAuth";
 
 export const store = configureStore({
   reducer: {
-    counter: counterSlice,
+    counter: counterReducer,
+    counterTimer: timerReducer,
     [userAPI.reducerPath]: userAPI.reducer,
     [imageAPI.reducerPath]: imageAPI.reducer,
     [randomUsers.reducerPath]: randomUsers.reducer,

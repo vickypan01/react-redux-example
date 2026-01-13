@@ -28,7 +28,7 @@ const SelectBox: React.FC<SelectBoxProps> = ({
   disabled = false,
   required = false,
   error,
-  className = "",
+  className = "form-control",
 }) => {
   return (
     <span>

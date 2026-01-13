@@ -20,6 +20,7 @@ import Unauthorized from "../Unauthorized";
 import ChildComponent from "../pages/ParentComp/ChildComp/childComponent";
 import JWTToeknExample from "../pages/JWT_Tokens/JWTToeknExample";
 import LoginCredentials from "../pages/JWT_Tokens/loginCredentials";
+import CommonFormCheck from "../pages/CommonForm/commonFormCheck";
 
 const userPrivilegee = USER_PRIVILADGE.onlyView;
 
@@ -27,7 +28,8 @@ const AppRoutes = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RouteLayout />}>
       <Route path="unauthorized" element={<Unauthorized />} />
-      <Route
+      <Route path="first-component" element={<CompZeroOne />}></Route>
+      {/* <Route
         path="first-component"
         element={
           <ProtectedRoute
@@ -36,7 +38,7 @@ const AppRoutes = createBrowserRouter(
             userPrivilege={userPrivilegee}
           />
         }
-      />
+      /> */}
       <Route
         path="second-component"
         element={
@@ -57,6 +59,7 @@ const AppRoutes = createBrowserRouter(
       <Route path="subchild" element={<ChildComponent />} />
       <Route path="jwt-token" element={<JWTToeknExample />} />
       <Route path="/loginCredentials" element={<LoginCredentials />} />
+      <Route path="/common-form" element={<CommonFormCheck />} />
     </Route>
   )
 );

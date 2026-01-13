@@ -7,7 +7,7 @@ const CompZeroFour: React.FC = () => {
     useGetKitchenDataMutation();
 
   useEffect(() => {
-    getKitchenData({})
+    getKitchenData()
       .unwrap()
       .then((res) => {
         console.log("✅ Kitchen Data:", res);

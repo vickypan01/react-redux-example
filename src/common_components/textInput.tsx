@@ -23,7 +23,7 @@ const TextInput: React.FC<TextInputProps> = ({
   required = false,
   disabled = false,
   error,
-  className = "",
+  className = "form-control",
 }) => {
   return (
     <span>
