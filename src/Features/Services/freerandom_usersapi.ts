@@ -58,6 +58,19 @@ export const kitchenSink = createApi({
   }),
 });
 
+export const dummyUserAPI = createApi({
+  reducerPath: "dummyUserAPI",
+  baseQuery: fetchBaseQuery({ baseUrl: API_BASE_URL.BASE_URL_NINE }),
+  endpoints: (builder) => ({
+    getDummyUserDetails: builder.query<any, void>({
+      query: () => ({
+        url: "",
+      }),
+    }),
+  }),
+});
+
+export const { useGetDummyUserDetailsQuery } = dummyUserAPI;
 export const { useGetRandomUserDetailsQuery } = randomUsers;
 export const { useGetKitchenDataMutation } = kitchenSink;
 export const { useGetYouTubeVideosDetailsQuery } = getYouTubeVideos;

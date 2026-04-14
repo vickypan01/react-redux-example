@@ -21,6 +21,7 @@ import ChildComponent from "../pages/ParentComp/ChildComp/childComponent";
 import JWTToeknExample from "../pages/JWT_Tokens/JWTToeknExample";
 import LoginCredentials from "../pages/JWT_Tokens/loginCredentials";
 import CommonFormCheck from "../pages/CommonForm/commonFormCheck";
+import TableWithDetailPopup from "../pages/Tables/table02";
 
 const userPrivilegee = USER_PRIVILADGE.onlyView;
 
@@ -60,8 +61,9 @@ const AppRoutes = createBrowserRouter(
       <Route path="jwt-token" element={<JWTToeknExample />} />
       <Route path="/loginCredentials" element={<LoginCredentials />} />
       <Route path="/common-form" element={<CommonFormCheck />} />
-    </Route>
-  )
+      <Route path="/detail-table" element={<TableWithDetailPopup />} />
+    </Route>,
+  ),
 );
 
 export default AppRoutes;

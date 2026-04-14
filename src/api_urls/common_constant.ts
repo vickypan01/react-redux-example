@@ -34,4 +34,5 @@ export const API_BASE_URL = {
   BASE_URL_SIX: "https://api.freeapi.app/api/v1/public/stocks/stock/random",
   BASE_URL_SEVEN: "https://api.freeapi.app/api/v1/public",
   BASE_URL_EIGHT: "https://dummyjson.com/auth/login",
+  BASE_URL_NINE: "https://dummyjson.com/users",
 };
