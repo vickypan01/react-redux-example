@@ -22,6 +22,7 @@ import JWTToeknExample from "../pages/JWT_Tokens/JWTToeknExample";
 import LoginCredentials from "../pages/JWT_Tokens/loginCredentials";
 import CommonFormCheck from "../pages/CommonForm/commonFormCheck";
 import TableWithDetailPopup from "../pages/Tables/table02";
+import NormalStaticForm from "../pages/CommonForm/normalForm";
 
 const userPrivilegee = USER_PRIVILADGE.onlyView;
 
@@ -62,6 +63,7 @@ const AppRoutes = createBrowserRouter(
       <Route path="/loginCredentials" element={<LoginCredentials />} />
       <Route path="/common-form" element={<CommonFormCheck />} />
       <Route path="/detail-table" element={<TableWithDetailPopup />} />
+      <Route path="/normal-form" element={<NormalStaticForm />} />
     </Route>,
   ),
 );

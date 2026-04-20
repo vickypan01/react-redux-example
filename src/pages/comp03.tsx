@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useGetRandomUserDetailsQuery } from "../Features/Services/freerandom_usersapi";
 import Common_Loader from "../common_components/loader";
 import ModalPopUp from "../common_components/modal";
+import TextInput from "../common_components/textInput";
+import SelectBox from "../common_components/selectBox";
 
 const CompZeroThree: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
@@ -21,11 +23,11 @@ const CompZeroThree: React.FC = () => {
   const getBgColorClass = (gender: string) => {
     return gender === "male" ? "border-warning" : "border-danger";
   };
-  // const userNameOptions =
-  //   randomUserData?.map((user: any) => ({
-  //     label: `${user.name.title} ${user.name.first} ${user.name.last}`,
-  //     value: `${user.name.title} ${user.name.first} ${user.name.last}`,
-  //   })) || [];
+  const userNameOptions =
+    randomUserData?.map((user: any) => ({
+      label: `${user.name.title} ${user.name.first} ${user.name.last}`,
+      value: `${user.name.title} ${user.name.first} ${user.name.last}`,
+    })) || [];
 
   const handleCardClick = (user: any) => {
     setSelectedUser(user);
@@ -42,30 +44,29 @@ const CompZeroThree: React.FC = () => {
       <div>
         <h1 className="display-6">Third Component</h1>
 
-        {/* <div className="data-filter d-flex align-items-center row row-cols-1 mb-3">
-      <div className="col-6">
-        <TextInput
-          name="nameFilterSearch"
-          label="Serch By ID"
-          value=""
-          onChange={() => {}}
-          placeholder="Serch By ID"
-          type="text"
-          className="form-control"
-        />
-      </div>
-      <div className="col-6">
-        <SelectBox
-          label="Serch By name"
-          name="searchByName"
-          value=""
-          onChange={() => {}}
-          options={userNameOptions}
-          placeholder="Serch By Name"
-          className="form-select"
-        />
-      </div>
-    </div> */}
+        <div className="data-filter d-flex align-items-center row row-cols-1 mb-3">
+          <div className="col-6">
+            <TextInput
+              name="nameFilterSearch"
+              label="Serch By ID"
+              onChange={() => {}}
+              placeholder="Serch By ID"
+              type="text"
+              className="form-control"
+            />
+          </div>
+          <div className="col-6">
+            <SelectBox
+              label="Serch By name"
+              name="searchByName"
+              value=""
+              onChange={() => {}}
+              options={userNameOptions}
+              placeholder="Serch By Name"
+              className="form-select"
+            />
+          </div>
+        </div>
 
         <div className="row row-cols-1 row-cols-md-4 g-4">
           {randomUserData.map((user: any, index: number) => (

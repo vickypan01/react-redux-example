@@ -52,12 +52,16 @@ const AppHeader: React.FC = () => {
                     className="nav-link dropdown-toggle"
                     href="#"
                     role="button"
+                    id="navbarDropdownMenuLink"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
                     Dropdown link
                   </a>
-                  <ul className="dropdown-menu">
+                  <ul
+                    className="dropdown-menu"
+                    aria-labelledby="navbarDropdownMenuLink"
+                  >
                     <li>
                       <Link className="dropdown-item" to="tableOne">
                         Tables
@@ -93,12 +97,84 @@ const AppHeader: React.FC = () => {
                         JWT Token Example
                       </Link>
                     </li>
+                    <li>
+                      <Link className="dropdown-item" to="common-form">
+                        Common Form Example
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="nav-link" to="detail-table">
+                        Table with Detail Popup
+                      </Link>
+                    </li>
                   </ul>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="detail-table">
-                    Table with Detail Popup
-                  </Link>
+                <li className="nav-item dropdown">
+                  <a
+                    className="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    id="navbarCommonForms"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Common Forms
+                  </a>
+                  <ul
+                    className="dropdown-menu"
+                    aria-labelledby="navbarCommonForms"
+                  >
+                    <li>
+                      <Link className="dropdown-item" to="normal-form">
+                        Normal Form
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="webSocketOne">
+                        Step Form
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="google-map">
+                        Tabbed Form
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="lazyLoading">
+                        Dynamic Form
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="GraphqlAPI">
+                        Repeated / Field Array Form
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="subchild">
+                        Modal Form (Popup Form)
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="jwt-token">
+                        Search / Filter Form
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="common-form">
+                        Progressive Form
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="nav-link" to="detail-table">
+                        File Upload Form
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="nav-link" to="heavy-validation-form">
+                        Validation-Heavy Form
+                      </Link>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </div>

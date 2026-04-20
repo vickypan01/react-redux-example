@@ -3,20 +3,18 @@ import React from "react";
 export interface TextInputProps {
   label?: string;
   name: string;
-  value: string | number;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder?: string;
   type?: "text" | "email" | "password" | "number";
   required?: boolean;
   disabled?: boolean;
-  error?: string;
+  error?: string | undefined;
   className?: string;
 }
 
 const TextInput: React.FC<TextInputProps> = ({
   label,
   name,
-  value,
   onChange,
   placeholder = "",
   type = "text",
@@ -24,6 +22,7 @@ const TextInput: React.FC<TextInputProps> = ({
   disabled = false,
   error,
   className = "form-control",
+  ...rest
 }) => {
   return (
     <span>
@@ -31,13 +30,13 @@ const TextInput: React.FC<TextInputProps> = ({
       <input
         id={name}
         name={name}
-        value={value}
         onChange={onChange}
         placeholder={placeholder}
         type={type}
         required={required}
         disabled={disabled}
         className={className + " input-field " + (error ? "input-error" : "")}
+        {...rest}
       />
       {error && <p className="d-block error-text text-danger">{error}</p>}
     </span>
