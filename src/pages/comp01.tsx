@@ -9,16 +9,18 @@ import {
   tick,
 } from "../Features/Counter/counterSlice";
 import { useEffect } from "react";
+import AutoSuggest from "../common_components/AutoSuggestCommonComponent/autoCompleteSearch";
+import ComponentFive from "./comp05";
 
 const CompZeroOne: React.FC = () => {
   const count = useSelector((state: RootState) => state.counter.value);
   const time = useSelector((state: RootState) => state.counterTimer.time);
   const isRunning = useSelector(
-    (state: RootState) => state.counterTimer.isRunning
+    (state: RootState) => state.counterTimer.isRunning,
   );
   const dispatch = useDispatch();
   const parentCountIncrement = useSelector(
-    (state: RootState) => state.counter.value
+    (state: RootState) => state.counter.value,
   );
 
   useEffect(() => {
@@ -65,6 +67,21 @@ const CompZeroOne: React.FC = () => {
             >
               Reset
             </button>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col text-center">
+            <h1>Component 01</h1>
+            {/* <AutoSuggest
+              value=""
+              onChange={(value, option) => {
+                console.log(value, option);
+              }}
+              fetchSuggestions={() => Promise.resolve([])}
+              labelField="name"
+              placeholder="Type to search..."
+            /> */}
+            <ComponentFive />
           </div>
         </div>
       </div>

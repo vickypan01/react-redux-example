@@ -4,6 +4,8 @@ export const USER_PRIVILADGE = {
   onlyView: "ONLY_VIEW_ACCESS",
 } as const;
 
+const MARKET_PLACE_API_KEY = "5226123ee4c509da860cd4488a9bfcdb";
+
 export const TIMEOUT = 5000;
 
 export const MILLISECONDS_PER_SECOND = 1000;
@@ -35,4 +37,8 @@ export const API_BASE_URL = {
   BASE_URL_SEVEN: "https://api.freeapi.app/api/v1/public",
   BASE_URL_EIGHT: "https://dummyjson.com/auth/login",
   BASE_URL_NINE: "https://dummyjson.com/users",
+};
+
+export const MARKET_STACK_API_URLS = {
+  STOCK_DATA: `https://api.marketstack.com/v1/eod?access_key=${MARKET_PLACE_API_KEY}`,
 };
