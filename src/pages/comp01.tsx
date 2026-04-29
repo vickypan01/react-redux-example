@@ -72,16 +72,6 @@ const CompZeroOne: React.FC = () => {
         <div className="row">
           <div className="col text-center">
             <h1>Component 01</h1>
-            {/* <AutoSuggest
-              value=""
-              onChange={(value, option) => {
-                console.log(value, option);
-              }}
-              fetchSuggestions={() => Promise.resolve([])}
-              labelField="name"
-              placeholder="Type to search..."
-            /> */}
-            <ComponentFive />
           </div>
         </div>
       </div>

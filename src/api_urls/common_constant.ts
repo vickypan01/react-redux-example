@@ -4,7 +4,7 @@ export const USER_PRIVILADGE = {
   onlyView: "ONLY_VIEW_ACCESS",
 } as const;
 
-const MARKET_PLACE_API_KEY = "5226123ee4c509da860cd4488a9bfcdb";
+export const MARKET_PLACE_API_KEY = "5226123ee4c509da860cd4488a9bfcdb";
 
 export const TIMEOUT = 5000;
 
@@ -40,5 +40,12 @@ export const API_BASE_URL = {
 };
 
 export const MARKET_STACK_API_URLS = {
-  STOCK_DATA: `https://api.marketstack.com/v1/eod?access_key=${MARKET_PLACE_API_KEY}`,
+  EOD_API_DATA: "https://api.marketstack.com/v2",
+  EOD_LATEST_API_DATA: "https://api.marketstack.com/v2/eod/latest",
+  EOD_DATE_SPECIFIC_API_DATA: "https://api.marketstack.com/v2/eod/{date}",
+  INTRADAY_API_DATA: "https://api.marketstack.com/v2/intraday",
+  INTRADAY_LATEST_API_DATA: "https://api.marketstack.com/v2/intraday/latest",
+  INTRADAY_DATE_SPECIFIC_API_DATA:
+    "https://api.marketstack.com/v2/intraday/{date}",
+  REALTIME_STOCK_PRICE_API_DATA: "https://api.marketstack.com/v2/stockprice",
 };

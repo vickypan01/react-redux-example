@@ -3,9 +3,16 @@ import TextInput from "../../common_components/textInput";
 import SelectBox from "../../common_components/selectBox";
 import CheckBox from "../../common_components/checkBox";
 import { useForm } from "react-hook-form";
-import { data } from "react-router-dom";
+import AutoSuggest from "../../common_components/AutoSuggestCommonComponent/autoCompleteSearch";
+import {
+  useGetEodDataQuery,
+  useLazyGetEodDataQuery,
+} from "../../Features/Services/market_stackapi";
+import type { Stock } from "../../DataTypes/types";
+import Common_Loader from "../../common_components/loader";
 
 const NormalStaticForm: React.FC = () => {
+  const [stockInput, setStockInput] = React.useState("");
   const {
     register,
     handleSubmit,
@@ -17,6 +24,7 @@ const NormalStaticForm: React.FC = () => {
       lastName: "",
       experience: "",
       termsConditions: false,
+      stockSymbol: "",
     },
   });
 
@@ -24,10 +32,35 @@ const NormalStaticForm: React.FC = () => {
     console.log("Form Data:", data);
   };
 
+  const {
+    data: marhetData,
+    isLoading,
+    isError,
+  } = useGetEodDataQuery(stockInput, {
+    skip: stockInput.length < 2,
+  });
+  const [trigger] = useLazyGetEodDataQuery();
   const termsRegister = register("termsConditions");
   const handleTermsChange = (data: { name: string; value: boolean }) => {
     termsRegister.onChange({ target: { name: data.name, value: data.value } });
   };
+
+  const fetchStockSuggestions = async (input: string): Promise<Stock[]> => {
+    if (!input) return [];
+
+    const result = await trigger(input).unwrap();
+
+    return result?.data || [];
+  };
+
+  if (isLoading)
+    return (
+      <>
+        <Common_Loader />
+        <p>Loading users...</p>
+      </>
+    );
+  if (isError) return <p>Error fetching users.</p>;
 
   return (
     <div>
@@ -35,6 +68,17 @@ const NormalStaticForm: React.FC = () => {
       <p>This is the Normal Static Form page.</p>
       <form onSubmit={handleSubmit(AddFormSubmit)}>
         <div className="row">
+          <div className="col-lg-12">
+            <AutoSuggest
+              value={stockInput}
+              labelField="symbol"
+              onChange={(value, option) => {
+                setStockInput(value);
+              }}
+              fetchSuggestions={fetchStockSuggestions}
+              placeholder="Type stock symbol..."
+            />
+          </div>
           <div className="col-md-6">
             <label>First Name:</label>
             <TextInput

@@ -9,6 +9,7 @@ import {
 } from "../Features/Services/freerandom_usersapi";
 import { graphAPI } from "../Features/Services/graphql_query";
 import { userAuthAPI } from "../Features/Services/userAuth";
+import { marketStackeodDataApi } from "../Features/Services/market_stackapi";
 
 export const store = configureStore({
   reducer: {
@@ -22,6 +23,7 @@ export const store = configureStore({
     [getYouTubeVideos.reducerPath]: getYouTubeVideos.reducer,
     [userAuthAPI.reducerPath]: userAuthAPI.reducer,
     [dummyUserAPI.reducerPath]: dummyUserAPI.reducer,
+    [marketStackeodDataApi.reducerPath]: marketStackeodDataApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
@@ -32,7 +34,8 @@ export const store = configureStore({
       .concat(graphAPI.middleware)
       .concat(getYouTubeVideos.middleware)
       .concat(userAuthAPI.middleware)
-      .concat(dummyUserAPI.middleware),
+      .concat(dummyUserAPI.middleware)
+      .concat(marketStackeodDataApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

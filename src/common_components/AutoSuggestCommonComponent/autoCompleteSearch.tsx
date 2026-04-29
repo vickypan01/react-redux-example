@@ -67,7 +67,7 @@ function AutoSuggest<T>({
   };
 
   return (
-    <div style={{ position: "relative", width: "300px" }}>
+    <div style={{ position: "relative" }}>
       <input
         value={value}
         placeholder={placeholder}
@@ -75,7 +75,7 @@ function AutoSuggest<T>({
         onFocus={() => setShow(true)}
         onBlur={() => setTimeout(() => setShow(false), 200)}
         onKeyDown={handleKeyDown}
-        style={{ width: "100%", padding: "8px" }}
+        className="form-control"
       />
 
       {show && suggestions.length > 0 && (

@@ -14,3 +14,10 @@ export interface PostsQueryArgs {
   page?: number;
   limit?: number;
 }
+
+export interface Stock {
+  symbol: string;
+  exchange: string;
+  open: number;
+  close: number;
+}
