@@ -22,6 +22,9 @@ export const counterSlice = createSlice({
     decrement: (state) => {
       state.value -= 1;
     },
+    resetCounter: (state) => {
+      state.value = 0;
+    },
   },
 });
 
@@ -45,7 +48,7 @@ export const timerSlice = createSlice({
   },
 });
 
-export const { increment, decrement } = counterSlice.actions;
+export const { increment, decrement, resetCounter } = counterSlice.actions;
 export const { start, stop, reset, tick } = timerSlice.actions;
 export const counterReducer = counterSlice.reducer;
 export const timerReducer = timerSlice.reducer;

@@ -10,6 +10,7 @@ import {
 } from "../../Features/Services/market_stackapi";
 import type { Stock } from "../../DataTypes/types";
 import Common_Loader from "../../common_components/loader";
+import CustomDatePicker from "../../common_components/DatePicker/datePicker";
 
 const NormalStaticForm: React.FC = () => {
   const [stockInput, setStockInput] = React.useState("");
@@ -70,6 +71,7 @@ const NormalStaticForm: React.FC = () => {
         <div className="row">
           <div className="col-lg-12">
             <AutoSuggest
+              {...register("stockSymbol")}
               value={stockInput}
               labelField="symbol"
               onChange={(value, option) => {

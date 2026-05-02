@@ -24,5 +24,49 @@ export const marketStackeodDataApi = createApi({
   }),
 });
 
+export const marketStackeodLatestApi = createApi({
+  reducerPath: "marketStackeodLatestData",
+  baseQuery: fetchBaseQuery({
+    baseUrl: MARKET_STACK_API_URLS.EOD_API_DATA,
+  }),
+  endpoints: (builder) => ({
+    getEodLatestData: builder.query<any, string>({
+      query: (latestData) => ({
+        url: "/eod/latest",
+        params: {
+          access_key: MARKET_PLACE_API_KEY,
+          symbols: latestData,
+          limit: 100,
+          offset: 0,
+        },
+      }),
+    }),
+  }),
+});
+
+export const marketStackIntradayDataApi = createApi({
+  reducerPath: "marketStackIntradayData",
+  baseQuery: fetchBaseQuery({
+    baseUrl: MARKET_STACK_API_URLS.INTRADAY_API_DATA,
+  }),
+  endpoints: (builder) => ({
+    getIntradayData: builder.query<any, string>({
+      query: (symbol) => ({
+        url: "/intraday",
+        params: {
+          access_key: MARKET_PLACE_API_KEY,
+          symbols: symbol,
+          limit: 100,
+          offset: 0,
+        },
+      }),
+    }),
+  }),
+});
+
 export const { useGetEodDataQuery, useLazyGetEodDataQuery } =
   marketStackeodDataApi;
+export const { useGetIntradayDataQuery, useLazyGetIntradayDataQuery } =
+  marketStackIntradayDataApi;
+export const { useGetEodLatestDataQuery, useLazyGetEodLatestDataQuery } =
+  marketStackeodLatestApi;

@@ -41,7 +41,7 @@ export const API_BASE_URL = {
 
 export const MARKET_STACK_API_URLS = {
   EOD_API_DATA: "https://api.marketstack.com/v2",
-  EOD_LATEST_API_DATA: "https://api.marketstack.com/v2/eod/latest",
+  EOD_LATEST_API_DATA: "https://api.marketstack.com/v2",
   EOD_DATE_SPECIFIC_API_DATA: "https://api.marketstack.com/v2/eod/{date}",
   INTRADAY_API_DATA: "https://api.marketstack.com/v2/intraday",
   INTRADAY_LATEST_API_DATA: "https://api.marketstack.com/v2/intraday/latest",
