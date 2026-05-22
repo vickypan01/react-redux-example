@@ -44,7 +44,7 @@ const CompZeroThree: React.FC = () => {
       <div>
         <h1 className="display-6">Third Component</h1>
 
-        <div className="data-filter d-flex align-items-center row row-cols-1 mb-3">
+        {/* <div className="data-filter d-flex align-items-center row row-cols-1 mb-3">
           <div className="col-6">
             <TextInput
               name="nameFilterSearch"
@@ -66,7 +66,7 @@ const CompZeroThree: React.FC = () => {
               className="form-select"
             />
           </div>
-        </div>
+        </div> */}
 
         <div className="row row-cols-1 row-cols-md-4 g-4">
           {randomUserData.map((user: any, index: number) => (

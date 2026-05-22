@@ -24,6 +24,7 @@ import CommonFormCheck from "../pages/CommonForm/commonFormCheck";
 import TableWithDetailPopup from "../pages/Tables/table02";
 import NormalStaticForm from "../pages/CommonForm/normalForm";
 import StepForm from "../pages/CommonForm/stepForm";
+import ScrollToLoadMore from "../pages/ScrollLoad/scrollToLoadMore";
 
 const userPrivilegee = USER_PRIVILADGE.onlyView;
 
@@ -64,6 +65,7 @@ const AppRoutes = createBrowserRouter(
       <Route path="/loginCredentials" element={<LoginCredentials />} />
       <Route path="/common-form" element={<CommonFormCheck />} />
       <Route path="/detail-table" element={<TableWithDetailPopup />} />
+      <Route path="/scroll-load" element={<ScrollToLoadMore />} />
       <Route path="/normal-form" element={<NormalStaticForm />} />
       <Route path="/step-form" element={<StepForm />} />
     </Route>,

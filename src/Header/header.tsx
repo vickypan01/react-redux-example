@@ -107,6 +107,11 @@ const AppHeader: React.FC = () => {
                         Table with Detail Popup
                       </Link>
                     </li>
+                    <li>
+                      <Link className="nav-link" to="scroll-load">
+                        Scroll to Load More
+                      </Link>
+                    </li>
                   </ul>
                 </li>
                 <li className="nav-item dropdown">

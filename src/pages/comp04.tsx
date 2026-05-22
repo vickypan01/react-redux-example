@@ -27,7 +27,6 @@ const CompZeroFour: React.FC = () => {
   {
     isError && <p>Error fetching data.</p>;
   }
-  console.log("useGetKitchenDataMutation", data);
   return (
     <>
       <h1 className="display-6">Fourth Component</h1>

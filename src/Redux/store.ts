@@ -13,6 +13,7 @@ import {
   marketStackeodDataApi,
   marketStackIntradayDataApi,
   marketStackeodLatestApi,
+  realTimeStockMarketPricesLatestApi,
 } from "../Features/Services/market_stackapi";
 
 export const store = configureStore({
@@ -31,6 +32,8 @@ export const store = configureStore({
     [marketStackIntradayDataApi.reducerPath]:
       marketStackIntradayDataApi.reducer,
     [marketStackeodLatestApi.reducerPath]: marketStackeodLatestApi.reducer,
+    [realTimeStockMarketPricesLatestApi.reducerPath]:
+      realTimeStockMarketPricesLatestApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
@@ -44,7 +47,8 @@ export const store = configureStore({
       .concat(dummyUserAPI.middleware)
       .concat(marketStackeodDataApi.middleware)
       .concat(marketStackIntradayDataApi.middleware)
-      .concat(marketStackeodLatestApi.middleware),
+      .concat(marketStackeodLatestApi.middleware)
+      .concat(realTimeStockMarketPricesLatestApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

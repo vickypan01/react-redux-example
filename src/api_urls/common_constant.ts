@@ -5,6 +5,7 @@ export const USER_PRIVILADGE = {
 } as const;
 
 export const MARKET_PLACE_API_KEY = "5226123ee4c509da860cd4488a9bfcdb";
+export const ALPHA_VANTAGE_API_KEY = "NMEZG46IKLX4V03L";
 
 export const TIMEOUT = 5000;
 
@@ -47,5 +48,5 @@ export const MARKET_STACK_API_URLS = {
   INTRADAY_LATEST_API_DATA: "https://api.marketstack.com/v2/intraday/latest",
   INTRADAY_DATE_SPECIFIC_API_DATA:
     "https://api.marketstack.com/v2/intraday/{date}",
-  REALTIME_STOCK_PRICE_API_DATA: "https://api.marketstack.com/v2/stockprice",
+  REALTIME_STOCK_PRICE_API_DATA: "https://api.marketstack.com/v2",
 };
